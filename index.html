@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Drink and Food Recipe App</title>
 </head>
 <body>
-    <h1>hewwo world!</h1>
     
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <h4>Make a meal!</h4>
+                <form>
+                    <div class="form-group">
+                      <label for="protein">Protein:</label>
+                      <input id="protein" type="text" class="form-control" placeholder="chicken, beef, fish, etc." aria-describedby="protein">
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="ingredients">Secondary ingredients:</label>
+                      <input id="ingredients" type="text" class="form-control" placeholder="butter, onion, garlic, carrots, etc.">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="search-btn">Submit</button>
+                  </form>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" id="results">
+                Results:
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src=script.js></script>
 </body>
 </html>
