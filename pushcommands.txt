@@ -1,0 +1,15 @@
+Git workflow
+1) git clone
+2) git checkout -b <branch-name>
+3) make changes
+4) git add
+5) git commit
+6) git push --set-upstream origin <branch-name>
+7) create pull request
+7a) have someone on the team, review the PR
+8) merge pull request
+9) git checkout master
+10) git pull
+11) git branch -D <branch-name>
+11) git checkout -b <name2>
+12) go back to step 3
