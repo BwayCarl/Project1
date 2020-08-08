@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Drink and Food Recipe App</title>
 </head>
 <body>
-    
+    <header class="header">
+        <h2>What Are We Making Today?</h2>
+    </header>
     <div class="container">
         <div class="row">
             
@@ -21,24 +24,50 @@
                       <input id="protein" type="text" class="form-control" placeholder="chicken, beef, fish, etc." aria-describedby="protein">
                       
                     </div>
-                    <div class="form-group">
-                      <label for="ingredients">Secondary ingredients:</label>
-                      <input id="ingredients" type="text" class="form-control" placeholder="butter, onion, garlic, carrots, etc.">
-                    </div>
                     
-                    <button type="submit" class="btn btn-primary" id="search-btn">Submit</button>
+                    
+                    <button type="submit" class="btn btn-primary" id="search-btn">What are we eating?</button>
                   </form>
                 <br>
             </div>
         </div>
+        <!-- Auto-populated based on search results -->
         <div class="row">
             <div class="col-sm-6" id="results">
                 Results:
+                <ul>
+                    <div class="list-group-item hide" id="meal-button" type="button" text="new-meal"></div>
+                </ul>
             </div>
         </div>
 
     </div>
-
+    
+    <!-- MODAL EXPERIMENT -->
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+                <!-- Title of Recipe -->
+              <h5 class="modal-title ">Recipe Title<span id="recipe-name"></span></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Ingredients -->
+            <div class="modal-body">
+                <img src="" id="food-image">
+              <p>Ingredients:</p>
+              <p><span id="measurement"></span> <span id="ingredients"></span></p>
+              <p>Directions:</p>
+              <p><span id="directions"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
