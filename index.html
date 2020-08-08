@@ -24,24 +24,50 @@
                       <input id="protein" type="text" class="form-control" placeholder="chicken, beef, fish, etc." aria-describedby="protein">
                       
                     </div>
-                    <div class="form-group">
-                      <label for="ingredients">Secondary ingredients:</label>
-                      <input id="ingredients" type="text" class="form-control" placeholder="butter, onion, garlic, carrots, etc.">
-                    </div>
+                    
                     
                     <button type="submit" class="btn btn-primary" id="search-btn">What are we eating?</button>
                   </form>
                 <br>
             </div>
         </div>
+        <!-- Auto-populated based on search results -->
         <div class="row">
             <div class="col-sm-6" id="results">
                 Results:
+                <ul>
+                    <div class="list-group-item hide" id="meal-button" type="button" text="new-meal"></div>
+                </ul>
             </div>
         </div>
 
     </div>
-
+    
+    <!-- MODAL EXPERIMENT -->
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+                <!-- Title of Recipe -->
+              <h5 class="modal-title ">Recipe Title<span id="recipe-name"></span></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Ingredients -->
+            <div class="modal-body">
+                <img src="" id="food-image">
+              <p>Ingredients:</p>
+              <p><span id="measurement"></span> <span id="ingredients"></span></p>
+              <p>Directions:</p>
+              <p><span id="directions"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
