@@ -1,78 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Drink and Food Recipe App</title>
-</head>
-<body>
-    <header class="header">
-        <h2>What Are We Making Today?</h2>
-    </header>
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-sm-6">
-                <h4>Make a meal!</h4>
-                <form>
-                    <div class="form-group">
-                      <label for="protein">Protein:</label>
-                      <input id="protein" type="text" class="form-control" placeholder="chicken, beef, fish, etc." aria-describedby="protein">
-                      
-                    </div>
-                    
-                    
-                    <button type="submit" class="btn btn-primary" id="search-btn">What are we eating?</button>
-                  </form>
-                <br>
-            </div>
-        </div>
-        <!-- Auto-populated based on search results -->
-        <div class="row">
-            <div class="col-sm-6" id="results">
-                Results:
-                <ul>
-                    <div class="list-group-item hide" id="meal-button" type="button" text="new-meal"></div>
-                </ul>
-            </div>
-        </div>
 
-    </div>
-    
-    <!-- MODAL EXPERIMENT -->
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-                <!-- Title of Recipe -->
-              <h5 class="modal-title ">Recipe Title<span id="recipe-name"></span></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <!-- Ingredients -->
-            <div class="modal-body">
-                <img src="" id="food-image">
-              <p>Ingredients:</p>
-              <p><span id="measurement"></span> <span id="ingredients"></span></p>
-              <p>Directions:</p>
-              <p><span id="directions"></span></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Drink and Food Recipe App</title>
+</head>
+
+<body>
+  <header class="header">
+    <h2>What Are We Making Today?</h2>
+  </header>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h4>Make a meal!</h4>
+        <form>
+          <div class="form-group">
+            <label for="ingredient">Protein:</label>
+            <!-- <input id="ingredient" type="text" class="form-control" aria-describedby="protein"> -->
+            <h2>Protein</h2>
+            <div class="cell small-12 medium-3 alt-font">
+              <select id="ingredient" name="protein">
+                <option value="Chicken">Chicken</option>
+                <option value="Beef">Beef</option>
+                <option value="Salmon">Salmon</option>
+                <option value="Pork">Pork</option>
+                <option value="Duck">Duck</option>
+              </select>
             </div>
           </div>
+
+
+          <button type="submit" class="btn btn-primary" id="search-btn">What are we eating?</button>
+        </form>
+        <br>
+      </div>
+    </div>
+    <!-- Auto-populated based on search results -->
+    <div class="row">
+      <div class="col-sm-6" id="results">
+        Results:
+        <ul>
+          <div class="list-group-item hide" id="meal-button" type="button" text="new-meal"></div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button>
+
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h5 class="modal-title">Recipe Title<span id="recipe-name"></span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <img src="" id="food-image">
+          <p>Ingredients:</p>
+          <p><span id="measurement"></span> <span id="ingredients"></span></p>
+          <p>Directions:</p>
+          <p><span id="directions"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
+    </div>
+  </div> -->
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipe-name">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="food-image">
+          <p>Ingredients:</p>
+          <div id="ingredientsDiv">
+            
+          </div>
+          <p>Directions:</p>
+          <p><span id="directions"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src=script.js></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src=script2.js></script>
 </body>
+
 </html>
