@@ -17,7 +17,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <title>Hewwo World Drink and Food Recipe App</title>
+  <title>Drink and Food Recipe App</title>
 </head>
 
 <body>
@@ -31,9 +31,9 @@
         <h4>Make a meal!</h4>
         <form>
           <div class="form-group">
-            <label for="ingredient">Protein:</label>
+            <label for="ingredient"><h5>Protein:</h5></label>
             <!-- <input id="ingredient" type="text" class="form-control" aria-describedby="protein"> -->
-            <h2>Protein</h2>
+            
             <div class="cell small-12 medium-3 alt-font">
               <select id="ingredient" name="protein">
                 <option value="Chicken">Chicken</option>
@@ -111,17 +111,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <img id="food-image">
-          <p>Ingredients:</p>
-          <div id="ingredientsDiv">
-            
-          </div>
-          <p>Directions:</p>
+          <img id="food-image" style= "max-width: 400px;">
+          <h5><b><i>Ingredients:</i></b></h5>
+          <div id="ingredientsDiv"></div>
+          <br>
+          <h5><b><i>Directions:</i></b></h5>
           <p><span id="directions"></span></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
         </div>
       </div>
     </div>

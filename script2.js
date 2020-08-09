@@ -79,9 +79,12 @@ $(document).ready(function() {
                     var i = 1;
                     var food = response.meals[0];
                     while (food["strIngredient" + i ] != null) {
+                        var strmeasure = food["strMeasure" +i];
                         var stringredient = food["strIngredient" + i];
                         console.log(stringredient);
-                        var newIngredient = $("<p>").text(stringredient);
+                        
+                        var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
+                        
                         modalIngredients.append(newIngredient);
                         i ++;
                     }
