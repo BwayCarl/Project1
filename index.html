@@ -4,18 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <title>Drink and Food Recipe App</title>
 </head>
@@ -26,7 +17,6 @@
   </header>
   <div class="container">
     <div class="row">
-
       <div class="col-sm-6">
         <h4>Make a meal!</h4>
         <form>
@@ -53,73 +43,36 @@
     </div>
     <!-- Auto-populated based on search results -->
     <div class="row">
-      <div class="col-sm-6" id="results">
-        Results:
-        <ul>
+      <div class="col-sm-6 d-none" id="results">
+        <h5><b><i>Results:</i></b></h5>
+        <!-- <ul>
           <div class="list-group-item hide" id="meal-button" type="button" text="new-meal"></div>
-        </ul>
+        </ul> -->
       </div>
     </div>
 
   </div>
 
 
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
-
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-
-          <h5 class="modal-title">Recipe Title<span id="recipe-name"></span></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <img src="" id="food-image">
-          <p>Ingredients:</p>
-          <p><span id="measurement"></span> <span id="ingredients"></span></p>
-          <p>Directions:</p>
-          <p><span id="directions"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop1">
-    Meal option 1
-  </button>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">
-    Meal option 2
-  </button>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop3">
-    Meal option 3
-  </button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop4">
-    Meal option 4
-  </button>
+  <row><button type="button" id="modal-btn-1" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop1"><span id="modal-btn-1-title"></span></button></row>
+  <row><button type="button" id="modal-btn-2" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop2"><span id="modal-btn-2-title"></span></button></row>
+  <row><button type="button" id="modal-btn-3" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop3"><span id="modal-btn-3-title"></span></button></row>
+  <row><button type="button" id="modal-btn-4" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop4"><span id="modal-btn-4-title"></span></button></row>
 
-  <!-- Modal (different names for each one;can't have same ID if you want different results), give different ID to each Modal and put ID in array and select each one, or give numbers--> 
-  <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <!-- Modal 1 (different names for each one;can't have same ID if you want different results), give different ID to each Modal and put ID in array and select each one, or give numbers--> 
+  <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name1">Modal title</h5>
+          <span></span><h5 class="modal-title" id="recipe-name1"></h5></span>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
- Sheena5
+ 
           <img id="food-image1" style= "max-width: 400px;">
           <h5><b><i>Ingredients:</i></b></h5>
           <div id="ingredientsDiv1"></div>
@@ -134,12 +87,13 @@
     </div>
   </div>
 
+ <!-- Modal 2 -->
   <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name2">Modal title</h5>
+          <h5 class="modal-title" id="recipe-name2"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -159,18 +113,19 @@
     </div>
   </div>
 
+  <!-- Modal 3 -->
   <div class="modal fade" id="staticBackdrop3" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name3">Modal title</h5>
+          <h5 class="modal-title" id="recipe-name3"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <img id="food-image2" style= "max-width: 400px;">
+          <img id="food-image3" style= "max-width: 400px;">
           <h5><b><i>Ingredients:</i></b></h5>
           <div id="ingredientsDiv3"></div>
           <br>
@@ -184,12 +139,13 @@
     </div>
   </div>
 
+  <!-- Modal 4 -->
   <div class="modal fade" id="staticBackdrop4" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name4">Modal title</h5>
+          <h5 class="modal-title" id="recipe-name4"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -201,14 +157,6 @@
           <br>
           <h5><b><i>Directions:</i></b></h5>
           <p><span id="directions4"></span></p>
-
-          <img id="food-image" style= "max-width: 400px;">
-          <h5><b><i>Ingredients:</i></b></h5>
-          <div id="ingredientsDiv"></div>
-          <br>
-          <h5><b><i>Directions:</i></b></h5>
-          <p><span id="directions"></span></p>
- master
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -217,8 +165,9 @@
     </div>
   </div>
 
-
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src=script2.js></script>
 </body>
