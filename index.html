@@ -31,9 +31,9 @@
         <h4>Make a meal!</h4>
         <form>
           <div class="form-group">
-            <label for="ingredient">Protein:</label>
+            <label for="ingredient"><h5>Protein:</h5></label>
             <!-- <input id="ingredient" type="text" class="form-control" aria-describedby="protein"> -->
-            <h2>Protein</h2>
+            
             <div class="cell small-12 medium-3 alt-font">
               <select id="ingredient" name="protein">
                 <option value="Chicken">Chicken</option>
@@ -95,33 +95,114 @@
   </div> -->
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-    Launch static backdrop modal
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop1">
+    Meal option 1
+  </button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">
+    Meal option 2
+  </button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop3">
+    Meal option 3
+  </button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop4">
+    Meal option 4
   </button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  <!-- Modal (different names for each one;can't have same ID if you want different results), give different ID to each Modal and put ID in array and select each one, or give numbers--> 
+  <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name">Modal title</h5>
+          <h5 class="modal-title" id="recipe-name1">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <img id="food-image">
-          <p>Ingredients:</p>
-          <div id="ingredientsDiv">
-            
-          </div>
-          <p>Directions:</p>
-          <p><span id="directions"></span></p>
+          <img id="food-image1" style= "max-width: 400px;">
+          <h5><b><i>Ingredients:</i></b></h5>
+          <div id="ingredientsDiv1"></div>
+          <br>
+          <h5><b><i>Directions:</i></b></h5>
+          <p><span id="directions1"></span></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipe-name2">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="food-image2" style= "max-width: 400px;">
+          <h5><b><i>Ingredients:</i></b></h5>
+          <div id="ingredientsDiv2"></div>
+          <br>
+          <h5><b><i>Directions:</i></b></h5>
+          <p><span id="directions2"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipe-name3">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="food-image2" style= "max-width: 400px;">
+          <h5><b><i>Ingredients:</i></b></h5>
+          <div id="ingredientsDiv3"></div>
+          <br>
+          <h5><b><i>Directions:</i></b></h5>
+          <p><span id="directions3"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipe-name4">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="food-image4" style= "max-width: 400px;">
+          <h5><b><i>Ingredients:</i></b></h5>
+          <div id="ingredientsDiv4"></div>
+          <br>
+          <h5><b><i>Directions:</i></b></h5>
+          <p><span id="directions4"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
