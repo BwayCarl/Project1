@@ -33,3 +33,12 @@ body {
     font-family: 'Lobster', cursive;
     font-size: 2rem;
   }
+
+  .drink-modal {
+    color: #f5f5f5;
+      background-color: rgb(27, 19, 27);
+  }
+
+  .close {
+    color: #f5f5f5;
+  }
