@@ -27,13 +27,17 @@ var modalButton4 = $("#modal-btn-4-title") // Imports recipe name in modal butto
 
 $(document).ready(function () {
     var searchedMeal; //Search Button
+    
     $("#search-btn").on("click", function () {
         event.preventDefault();
+       
         searchedMeal = $("#ingredient").val(); //Search Button
+       
         randomMeal1();
         randomMeal2();
         randomMeal3();
         randomMeal4();
+       
         $("#modal-btn-1").removeClass("d-none");
         $("#modal-btn-2").removeClass("d-none");
         $("#modal-btn-3").removeClass("d-none");
@@ -42,22 +46,22 @@ $(document).ready(function () {
     });
 
     // Recipe 1 ___________________________________________
+
     function randomMeal1() {
         modalIngredients1.html("");
-        console.log("ingredient: " + searchedMeal);
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+            
             var meal = response.meals;
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             var recipeImg = randomMeal.strMealThumb;
             modalButton1.text(randomMeal.strMeal);
             modalTitle1.text(randomMeal.strMeal);
             modalImage1.attr("src", recipeImg);
-
             var mealID1 = randomMeal.idMeal;
 
             $.ajax({
@@ -69,7 +73,6 @@ $(document).ready(function () {
                 while (food["strIngredient" + i] != null) {
                     var strmeasure = food["strMeasure" + i];
                     var stringredient = food["strIngredient" + i];
-                    console.log(stringredient);
 
                     if (strmeasure && stringredient) {
                         var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -88,32 +91,31 @@ $(document).ready(function () {
 
     function randomMeal2() {
         modalIngredients2.html("");
-        console.log("ingredient: " + searchedMeal);
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+           
             var meal = response.meals;
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             var recipeImg = randomMeal.strMealThumb;
             modalButton2.text(randomMeal.strMeal);
             modalTitle2.text(randomMeal.strMeal);
             modalImage2.attr("src", recipeImg);
-
             var mealID2 = randomMeal.idMeal;
 
             $.ajax({
                 url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID2,
                 method: "GET",
             }).then(function (response) {
+              
                 var i = 1;
                 var food = response.meals[0];
                 while (food["strIngredient" + i] != null) {
                     var strmeasure = food["strMeasure" + i];
                     var stringredient = food["strIngredient" + i];
-                    console.log(stringredient);
 
                     if (strmeasure && stringredient) {
                         var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -131,32 +133,31 @@ $(document).ready(function () {
 
     function randomMeal3() {
         modalIngredients3.html("");
-        console.log("ingredient: " + searchedMeal);
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+           
             var meal = response.meals;
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             var recipeImg = randomMeal.strMealThumb;
             modalButton3.text(randomMeal.strMeal);
             modalTitle3.text(randomMeal.strMeal);
             modalImage3.attr("src", recipeImg);
-
             var mealID3 = randomMeal.idMeal;
 
             $.ajax({
                 url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID3,
                 method: "GET",
             }).then(function (response) {
+              
                 var i = 1;
                 var food = response.meals[0];
                 while (food["strIngredient" + i] != null) {
                     var strmeasure = food["strMeasure" + i];
                     var stringredient = food["strIngredient" + i];
-                    console.log(stringredient);
 
                     if (strmeasure && stringredient) {
                         var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -174,32 +175,31 @@ $(document).ready(function () {
 
     function randomMeal4() {
         modalIngredients4.html("");
-        console.log("ingredient: " + searchedMeal);
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+           
             var meal = response.meals;
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             var recipeImg = randomMeal.strMealThumb;
             modalButton4.text(randomMeal.strMeal);
             modalTitle4.text(randomMeal.strMeal);
             modalImage4.attr("src", recipeImg);
-
             var mealID4 = randomMeal.idMeal;
 
             $.ajax({
                 url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID4,
                 method: "GET",
             }).then(function (response) {
+               
                 var i = 1;
                 var food = response.meals[0];
                 while (food["strIngredient" + i] != null) {
                     var strmeasure = food["strMeasure" + i];
                     var stringredient = food["strIngredient" + i];
-                    console.log(stringredient);
 
                     if (strmeasure && stringredient) {
                         var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -243,7 +243,9 @@ $(document).ready(function () {
         var searchedDrink; //Search Button
         $("#drink-search-btn").on("click", function () {
             event.preventDefault();
+            
             searchedDrink = $("#liquor").val(); //Search Button
+            
             randomDrink5();
             randomDrink6();
             randomDrink7();
@@ -257,36 +259,34 @@ $(document).ready(function () {
         })
 
         // Recipe 5 ___________________________________________
+
         function randomDrink5() {
             modalIngredients5.html("");
-            console.log("ingredient: " + searchedDrink);
 
             var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchedDrink;
             $.ajax({
                 url: queryURL,
                 method: "GET",
             }).then(function (response) {
+               
                 var drink = response.drinks;
                 var randomDrink = drink[Math.floor(Math.random() * drink.length)];
-                console.log(randomDrink);
                 var recipeImg = randomDrink.strDrinkThumb;
-                console.log(recipeImg);
                 modalButton5.text(randomDrink.strDrink);
                 modalTitle5.text(randomDrink.strDrink);
                 modalImage5.attr("src", recipeImg);
                 var drinkID5 = randomDrink.idDrink;
 
-
                 $.ajax({
                     url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID5,
                     method: "GET",
                 }).then(function (response) {
+                   
                     var i = 1;
                     var drink = response.drinks[0];
                     while (drink["strIngredient" + i] != null) {
                         var strmeasure = drink["strMeasure" + i];
                         var stringredient = drink["strIngredient" + i];
-                        console.log(stringredient);
 
                         if (strmeasure && stringredient) {
                             var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -300,36 +300,34 @@ $(document).ready(function () {
             });
         }
         // Recipe 6 ___________________________________________
+
         function randomDrink6() {
             modalIngredients6.html("");
-            console.log("ingredient: " + searchedDrink);
 
             var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchedDrink;
             $.ajax({
                 url: queryURL,
                 method: "GET",
             }).then(function (response) {
+              
                 var drink = response.drinks;
                 var randomDrink = drink[Math.floor(Math.random() * drink.length)];
-                console.log(randomDrink);
                 var recipeImg = randomDrink.strDrinkThumb;
-                console.log(recipeImg);
                 modalButton6.text(randomDrink.strDrink);
                 modalTitle6.text(randomDrink.strDrink);
                 modalImage6.attr("src", recipeImg);
                 var drinkID6 = randomDrink.idDrink;
 
-
                 $.ajax({
                     url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID6,
                     method: "GET",
                 }).then(function (response) {
+                  
                     var i = 1;
                     var drink = response.drinks[0];
                     while (drink["strIngredient" + i] != null) {
                         var strmeasure = drink["strMeasure" + i];
                         var stringredient = drink["strIngredient" + i];
-                        console.log(stringredient);
 
                         if (strmeasure && stringredient) {
                             var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -343,36 +341,34 @@ $(document).ready(function () {
             });
         }
         // Recipe 7 ___________________________________________
+
         function randomDrink7() {
             modalIngredients7.html("");
-            console.log("ingredient: " + searchedDrink);
 
             var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchedDrink;
             $.ajax({
                 url: queryURL,
                 method: "GET",
             }).then(function (response) {
+               
                 var drink = response.drinks;
                 var randomDrink = drink[Math.floor(Math.random() * drink.length)];
-                console.log(randomDrink);
                 var recipeImg = randomDrink.strDrinkThumb;
-                console.log(recipeImg);
                 modalButton7.text(randomDrink.strDrink);
                 modalTitle7.text(randomDrink.strDrink);
                 modalImage7.attr("src", recipeImg);
                 var drinkID7 = randomDrink.idDrink;
 
-
                 $.ajax({
                     url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID7,
                     method: "GET",
                 }).then(function (response) {
+                  
                     var i = 1;
                     var drink = response.drinks[0];
                     while (drink["strIngredient" + i] != null) {
                         var strmeasure = drink["strMeasure" + i];
                         var stringredient = drink["strIngredient" + i];
-                        console.log(stringredient);
 
                         if (strmeasure && stringredient) {
                             var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
@@ -386,36 +382,34 @@ $(document).ready(function () {
             });
         }
         // Recipe 8 ___________________________________________
+
         function randomDrink8() {
             modalIngredients7.html("");
-            console.log("ingredient: " + searchedDrink);
 
             var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchedDrink;
             $.ajax({
                 url: queryURL,
                 method: "GET",
             }).then(function (response) {
+              
                 var drink = response.drinks;
                 var randomDrink = drink[Math.floor(Math.random() * drink.length)];
-                console.log(randomDrink);
                 var recipeImg = randomDrink.strDrinkThumb;
-                console.log(recipeImg);
                 modalButton8.text(randomDrink.strDrink);
                 modalTitle8.text(randomDrink.strDrink);
                 modalImage8.attr("src", recipeImg);
                 var drinkID8 = randomDrink.idDrink;
 
-
                 $.ajax({
                     url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID8,
                     method: "GET",
                 }).then(function (response) {
+                    
                     var i = 1;
                     var drink = response.drinks[0];
                     while (drink["strIngredient" + i] != null) {
                         var strmeasure = drink["strMeasure" + i];
                         var stringredient = drink["strIngredient" + i];
-                        console.log(stringredient);
 
                         if (strmeasure && stringredient) {
                             var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
