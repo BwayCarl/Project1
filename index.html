@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  
   <header class="header">
     <h2 style="text-align: center;">What Are We Making Today?</h2>
   </header>
@@ -19,11 +20,9 @@
     <div class="row">
       <div class="col-sm-6">
 
-        <a href="IMG1448.JPG">  
-          <img src="./IMG1448.JPG" width="200"></img>
-          </a>
+        <a href="drinksindex.html">Don't forget your drink!</a>
 
-          <div class="container-fluid"> 1
+          <div class="container-fluid"> 
           <h4>Make a meal!</h4>
         <form>
           <div class="form-group">
@@ -55,6 +54,7 @@
     </div>
   </div>
 
+  
 
 
   <!-- Button Modals that are generated on search -->
@@ -171,164 +171,6 @@
     </div>
   </div>
 
-<!-- Drink portion of the app -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        
-        <a href="IMG9364.JPG">  
-          <img src="./IMG9364.JPG" width="200"></img>
-          </a>
-        
-          <div class="container-fluid"></div>
-            
-          <h4>Make a Drink!</h4>
-        <form>
-          <div class="form-group">
-            <label for="liquor"><h5>Liquor:</h5></label>
-            <!-- <input id="ingredient" type="text" class="form-control" aria-describedby="protein"> -->
-            
-            <div class="cell small-12 medium-3 alt-font">
-              <select id="liquor" name="liquor">
-                <option value="Vodka">Vodka</option>
-                <option value="Gin">Gin</option>
-                <option value="Light%20Rum">Light Rum</option>
-                <option value="Dark%20Rum">Dark Rum</option>
-                <option value="Bourbon">Bourbon</option>
-                <option value="Brandy">Brandy</option>
-                <option value="Scotch">Scotch</option>
-                <option value="Tequila">Tequila</option>
-                <option value="Whiskey">Whiskey</option>
-              </select>
-            </div>
-          </div>
-
-
-          <button type="submit" class="btn btn-primary" id="drink-search-btn">What are we drinking?</button>
-        </form>
-        <br>
-      </div>
-    </div>
-   
-    <div class="row">
-      <div class="col-sm-6 d-none" id="drink-results">
-        <h5><b><i>Results:</i></b></h5>
-      </div>
-    </div>
-  </div>
-
-  <!-- Drinks Button Modals that are generated on search -->
-  <!-- Modal 5 button -->
-  <row><button type="button" id="modal-btn-5" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop5"><span id="modal-btn-5-title"></span></button></row>
-  <!-- Modal 6 Button -->
-  <row><button type="button" id="modal-btn-6" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop6"><span id="modal-btn-6-title"></span></button></row>
-  <!-- Modal 7 Button -->
-  <row><button type="button" id="modal-btn-7" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop7"><span id="modal-btn-7-title"></span></button></row>
-  <!-- Modal 8 Button -->
-  <row><button type="button" id="modal-btn-8" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop8"><span id="modal-btn-8-title"></span></button></row>
-
-  <!-- Modal 5 -->
-  <div class="modal fade" id="staticBackdrop5" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content drink-modal">
-        <div class="modal-header">
-          <h5 class="modal-title" id="recipe-name5"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
- 
-          <img id="drink-image5" style= "max-width: 400px;">
-          <h5><b><i>Drink Ingredients:</i></b></h5>
-          <div id="ingredientsDiv5"></div>
-          <br>
-          <h5><b><i>Directions:</i></b></h5>
-          <p><span id="directions5"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 6 -->
-    <div class="modal fade" id="staticBackdrop6" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content drink-modal">
-          <div class="modal-header">
-            <h5 class="modal-title" id="recipe-name6"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-   
-            <img id="drink-image6" style= "max-width: 400px;">
-            <h5><b><i>Drink Ingredients:</i></b></h5>
-            <div id="ingredientsDiv6"></div>
-            <br>
-            <h5><b><i>Directions:</i></b></h5>
-            <p><span id="directions6"></span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Modal 7 -->
-    <div class="modal fade" id="staticBackdrop7" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content drink-modal">
-          <div class="modal-header">
-            <h5 class="modal-title" id="recipe-name7"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-   
-            <img id="drink-image7" style= "max-width: 400px;">
-            <h5><b><i>Drink Ingredients:</i></b></h5>
-            <div id="ingredientsDiv7"></div>
-            <br>
-            <h5><b><i>Directions:</i></b></h5>
-            <p><span id="directions7"></span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal 8 -->
-    <div class="modal fade" id="staticBackdrop8" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content drink-modal">
-          <div class="modal-header">
-            <h5 class="modal-title" id="recipe-name8"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-    
-            <img id="drink-image8" style= "max-width: 400px;">
-            <h5><b><i>Drink Ingredients:</i></b></h5>
-            <div id="ingredientsDiv8"></div>
-            <br>
-            <h5><b><i>Directions:</i></b></h5>
-            <p><span id="directions8"></span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
