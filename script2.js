@@ -1,40 +1,5 @@
-// $(document).ready(function() {
-//     var searchedMeal = "chicken_breast";
-//     //replace chicken breast with textarea input value
-//     function randomMeal1 () {
-//         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
-//             $.ajax({
-//                 url: queryURL,
-//                 method: "GET",
-//             }).then(function (response) {
-//                 var meal=response.meals;
-//                 var randomMeal = meal[Math.floor(Math.random() * meal.length)];
-//                 console.log(randomMeal);
-//                 var mealID = randomMeal.idMeal;
-//                 $.ajax({
-//                     url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID,
-//                     method: "GET",
-//                 }).then(function(response) {
-//                     var i = 1;
-//                     var food = response.meals[0];
-//                     while (food["strIngredient" + i ] != null) {
-//                         var stringredient= food["strIngredient" + i];
-//                         console.log(stringredient);
-//                         i ++;
-//                     }
-//                 })
-//             });
-//     }
-
-//     randomMeal1();
-// })
-
-
-//Variables
-
-
 //Modal Variables____________________ (NEED FOUR TO HAVE DIFFERENT RESULTS)
-//
+
 var modalTitle1 = $("#recipe-name1"); //Recipe Title 1
 var modalImage1 = $("#food-image1"); // Thumbnail
 var modalMeasurements1 = $("#measurement1"); // Measurements
@@ -63,14 +28,6 @@ var modalIngredients4 = $("#ingredientsDiv4"); // Ingredients
 var modalDirections4 = $("#directions4"); // Directions
 var modalButton4 = $("#modal-btn-4-title") // Imports recipe name in modal button
 
-//Modals loop (create string concactination)
-//var bodyHTML = [
-//$modals = array( '1','modal2','modal3', 'modal4')
-//$i = 1;
-//foreach( $modals)
-//endforeach;
-//];
-
 
 $(document).ready(function() {
     var searchedMeal; //Search Button
@@ -87,52 +44,48 @@ $(document).ready(function() {
         $("#results").removeClass("d-none")
     })
 
-    // Recipe 1 ___________________________________________
-    function randomMeal1 () { 
-        console.log("ingredient: " + searchedMeal);
+// Recipe 1 ___________________________________________
+function randomMeal1 () { 
+    console.log("ingredient: " + searchedMeal);
 
-        var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            var meal = response.meals;
+            var randomMeal = meal[Math.floor(Math.random() * meal.length)];
+            console.log(randomMeal);
+            var recipeImg = randomMeal.strMealThumb;
+            console.log(recipeImg);
+            modalButton1.text(randomMeal.strMeal);
+            modalTitle1.text(randomMeal.strMeal);
+            modalImage1.attr("src", recipeImg);
+            var mealID1 = randomMeal.idMeal;
+            
+            
             $.ajax({
-                url: queryURL,
+                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID1,
                 method: "GET",
-            }).then(function (response) {
-                var meal = response.meals;
-                //create for loop that repeats 4 times
-                //it will select a different meal each time
-                //PUT FOR LOOP HERE
-                //for (staticBackdrop1; staticBackdrop2; staticBackdrop3; staticBackdrop4;) {}
-
-                //Meal call
-                var randomMeal = meal[Math.floor(Math.random() * meal.length)];
-                console.log(randomMeal);
-                var recipeImg = randomMeal.strMealThumb;
-                console.log(recipeImg);
-                modalButton1.text(randomMeal.strMeal);
-                modalTitle1.text(randomMeal.strMeal);
-                modalImage1.attr("src", recipeImg);
-                var mealID = randomMeal.idMeal;
-                
-                
-                $.ajax({
-                    url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID,
-                    method: "GET",
-                }).then(function(response) {
-                    var i = 1;
-                    var food = response.meals[0, 1, 2, 3];
-                    while (food["strIngredient" + i ] != null) {
-                        var strmeasure = food["strMeasure" +i];
-                        var stringredient = food["strIngredient" + i];
-                        console.log(stringredient);
-                        
-                        var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
-                        
-                        modalIngredients.append(newIngredient);
-                        i ++;
+            }).then(function(response) {
+                var i = 1;
+                var food = response.meals[0];
+                while (food["strIngredient" + i ] != null) {
+                    var strmeasure = food["strMeasure" +i];
+                    var stringredient = food["strIngredient" + i];
+                    console.log(stringredient);
+                    
+                    if (strmeasure && stringredient) {
+                    var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
+                    
+                    modalIngredients1.append(newIngredient);
                     }
-                    modalDirections.text(food.strInstructions);
-                })
-            });
-    }
+                    i ++;
+                }
+                modalDirections1.text(food.strInstructions);
+            })
+        });
+}
 })
 
  // Recipe 2_______________________________________
@@ -157,12 +110,6 @@ function randomMeal2 () {
             method: "GET",
         }).then(function (response) {
             var meal = response.meals;
-            //create for loop that repeats 4 times
-            //it will select a different meal each time
-            //PUT FOR LOOP HERE
-            //for (staticBackdrop1; staticBackdrop2; staticBackdrop3; staticBackdrop4;) {}
-
-            //Meal call
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             console.log(randomMeal);
             var recipeImg = randomMeal.strMealThumb;
@@ -170,33 +117,35 @@ function randomMeal2 () {
             modalButton2.text(randomMeal.strMeal);
             modalTitle2.text(randomMeal.strMeal);
             modalImage2.attr("src", recipeImg);
-            var mealID = randomMeal.idMeal;
+            var mealID2 = randomMeal.idMeal;
             
             
             $.ajax({
-                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID,
+                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID2,
                 method: "GET",
             }).then(function(response) {
                 var i = 1;
-                var food = response.meals[0, 1, 2, 3];
+                var food = response.meals[0];
                 while (food["strIngredient" + i] != null) {
                     var strmeasure = food["strMeasure" +i];
                     var stringredient = food["strIngredient" + i];
                     console.log(stringredient);
                     
+                    if (strmeasure && stringredient) {
                     var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
                     
-                    modalIngredients.append(newIngredient);
+                    modalIngredients2.append(newIngredient);
+                    }
                     i ++;
                 }
-                modalDirections.text(food.strInstructions);
+                modalDirections2.text(food.strInstructions);
             })
         });
 }
 
 // Recipe 3 _______________________________________
-var searchedMeal; //Search Button
-$("#search-btn").on("click", function() {
+    var searchedMeal; //Search Button
+    $("#search-btn").on("click", function() {
     event.preventDefault();
     searchedMeal = $("#ingredient").val(); //Search Button
     if (searchedMeal === "") {
@@ -205,8 +154,9 @@ $("#search-btn").on("click", function() {
         randomMeal3();
     }
     $("#modal-btn-3").removeClass("d-none");
-})
-function randomMeal3 () { 
+    })
+    
+    function randomMeal3 () { 
     console.log("ingredient: " + searchedMeal);
 
     var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
@@ -215,12 +165,6 @@ function randomMeal3 () {
             method: "GET",
         }).then(function (response) {
             var meal = response.meals;
-            //create for loop that repeats 4 times
-            //it will select a different meal each time
-            //PUT FOR LOOP HERE
-            //for (staticBackdrop1; staticBackdrop2; staticBackdrop3; staticBackdrop4;) {}
-
-            //Meal call
             var randomMeal = meal[Math.floor(Math.random() * meal.length)];
             console.log(randomMeal);
             var recipeImg = randomMeal.strMealThumb;
@@ -228,100 +172,83 @@ function randomMeal3 () {
             modalButton3.text(randomMeal.strMeal);
             modalTitle3.text(randomMeal.strMeal);
             modalImage3.attr("src", recipeImg);
-            var mealID = randomMeal.idMeal;
+            var mealID3 = randomMeal.idMeal;
             
             
             $.ajax({
-                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID,
+                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID3,
                 method: "GET",
             }).then(function(response) {
                 var i = 1;
-                var food = response.meals[0, 1, 2, 3];
+                var food = response.meals[0];
                 while (food["strIngredient" + i ] != null) {
                     var strmeasure = food["strMeasure" +i];
                     var stringredient = food["strIngredient" + i];
                     console.log(stringredient);
                     
+                    if (strmeasure && stringredient) {
                     var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
                     
-                    modalIngredients.append(newIngredient);
+                    modalIngredients3.append(newIngredient);
+                    }
                     i ++;
                 }
-                modalDirections.text(food.strInstructions);
+                modalDirections3.text(food.strInstructions);
             })
         });
-}
-
-// Recipe 4 _______________________________________
-var searchedMeal; //Search Button
-$("#search-btn").on("click", function() {
-    event.preventDefault();
-    searchedMeal = $("#ingredient").val(); //Search Button
-    if (searchedMeal === "") {
-        alert("input protein");
-    } else {
-        randomMeal4();
     }
-    $("#modal-btn-4").removeClass("d-none");
-})
-function randomMeal4 () { 
-    console.log("ingredient: " + searchedMeal);
 
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-        }).then(function (response) {
-            var meal = response.meals;
-        
+    // Recipe 4 _______________________________________
+    var searchedMeal; //Search Button
+    $("#search-btn").on("click", function() {
+        event.preventDefault();
+        searchedMeal = $("#ingredient").val(); //Search Button
+        if (searchedMeal === "") {
+            alert("input protein");
+        } else {
+            randomMeal4();
+        }
+        $("#modal-btn-4").removeClass("d-none");
+    })
 
-            //Meal call
-            var randomMeal = meal[Math.floor(Math.random() * meal.length)];
-            console.log(randomMeal);
-            var recipeImg = randomMeal.strMealThumb;
-            console.log(recipeImg);
-            modalButton4.text(randomMeal.strMeal);
-            modalTitle4.text(randomMeal.strMeal);
-            modalImage4.attr("src", recipeImg);
-            var mealID = randomMeal.idMeal;
-            
-            
+    function randomMeal4 () { 
+        console.log("ingredient: " + searchedMeal);
+
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + searchedMeal;
             $.ajax({
-                url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID,
+                url: queryURL,
                 method: "GET",
-            }).then(function(response) {
-                var i = 1;
-                var food = response.meals[0, 1, 2, 3];
-                while (food["strIngredient" + i ] != null) {
-                    var strmeasure = food["strMeasure" +i];
-                    var stringredient = food["strIngredient" + i];
-                    console.log(stringredient);
-                    
-                    var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
-                    
-                    modalIngredients.append(newIngredient);
-                    i ++;
-                }
-                modalDirections.text(food.strInstructions);
-            })
-        });
-}
-
-//Placed an "i" in the parenthesis so each modal renders a different meal option (side note: there may be some repeats but that's due to the Meal API and not an error in code)
-function recipeChoices(i) {
-    $("#meal-button").empty();
-
-    // Looping through the array of meals
-    for (var i = 0; i < meals.length; i++) {
-
-      // Generate buttons for each meal in the array.
-        var newMeal = $("<li>");
-        newMeal.addClass("list-group-item");
-        newMeal.attr("data-name", meal[i]);
-        newMeal.text(meals[i]);
-        newMeal.val("search-history");
-        
-        $("#meal-button").append(newMeal);
-      }
+            }).then(function (response) {
+                var meal = response.meals;
+                var randomMeal = meal[Math.floor(Math.random() * meal.length)];
+                console.log(randomMeal);
+                var recipeImg = randomMeal.strMealThumb;
+                console.log(recipeImg);
+                modalButton4.text(randomMeal.strMeal);
+                modalTitle4.text(randomMeal.strMeal);
+                modalImage4.attr("src", recipeImg);
+                var mealID4 = randomMeal.idMeal;
+                
+                
+                $.ajax({
+                    url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID4,
+                    method: "GET",
+                }).then(function(response) {
+                    var i = 1;
+                    var food = response.meals[0];
+                    while (food["strIngredient" + i ] != null) {
+                        var strmeasure = food["strMeasure" +i];
+                        var stringredient = food["strIngredient" + i];
+                        console.log(stringredient);
+                        
+                        if (strmeasure && stringredient) {
+                        var newIngredient = $("<p>").text(strmeasure + "- " + stringredient);
+                        
+                        modalIngredients4.append(newIngredient);
+                        }
+                        i ++;
+                    }
+                    modalDirections4.text(food.strInstructions);
+                })
+            });
     }
-
