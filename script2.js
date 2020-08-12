@@ -234,7 +234,7 @@ $(document).ready(function () {
     var modalDirections7 = $("#directions7"); 
     var modalButton7 = $("#modal-btn-7-title");  
 
-    var modalTitle8 = $("#recipe-name7"); //Recipe Title 8
+    var modalTitle8 = $("#recipe-name8"); //Recipe Title 8
     var modalImage8 = $("#drink-image8");
     var modalIngredients8 = $("#ingredientsDiv8"); 
     var modalDirections8 = $("#directions8"); 
