@@ -1,45 +1,44 @@
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 1rem;
+  box-sizing: border-box;
+  margin: 1rem;
 }
 html { 
-  background: url(Assets/ingredients4981991280.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+background: url(Assets/ingredients4981991280.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 header, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
-    
+  font-family: 'Lobster', cursive;
+  
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #f5f5f5;
-    background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  color: #f5f5f5;
+  background-color: transparent;
 }
 
-  
+
 .btn, .btn-meal {
-  background-color: rgba(134, 95, 69, 0.89);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  transition-duration: 0.4s;
-  padding-top: .5rem;
-  border-radius: 1.5rem;
+background-color: rgba(134, 95, 69, 0.89);
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+transition-duration: 0.4s;
+padding-top: .5rem;
+border-radius: 1.5rem;
 }
-  .btn:hover {
-    background-color: #f5f5f5;
-    color:  rgb(116, 29, 46);
-  }
+.btn:hover {
+  background-color: #f5f5f5;
+  color:  rgb(116, 29, 46);
+}
 
-  .modal-content {
-      color: #000000;
-      background-color: rgba(252, 252, 222, 0.8);
-  }
+.modal-content {
+    color: #000000;
+    background-color: rgba(252, 252, 222, 0.8);
+}
 
-  .modal-title {
-    font-family: 'Lobster', cursive;
-    font-size: 2rem;
-  }
-
+.modal-title {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+}
