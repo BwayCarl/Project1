@@ -43,7 +43,7 @@ $(document).ready(function () {
         $("#modal-btn-3").removeClass("d-none");
         $("#modal-btn-4").removeClass("d-none");
         $("#results").removeClass("d-none");
-        $("#switch-to-drink").removeClass("d-none")
+        
     });
 
     // Recipe 1 ___________________________________________
@@ -257,7 +257,6 @@ $(document).ready(function () {
             $("#modal-btn-7").removeClass("d-none");
             $("#modal-btn-8").removeClass("d-none");
             $("#drink-results").removeClass("d-none")
-            $("#switch-to-meal").removeClass("d-none")
         })
 
         // Recipe 5 ___________________________________________
