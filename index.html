@@ -7,21 +7,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Drink and Food Recipe App</title>
 </head>
 
 <body>
-  <header class="header">
-    <h1 style="text-align: center;">What Are We Making Today?</h1>
+  <header class="header text-center">
+    <h1 class="animate__animated animate__bounceInDown">What Are We Making Today?</h1>
   </header>
 
    <!-- Button to switch to Drink HTML -->
-<div><a href="drinksindex.html"><button type="submit" class="btn btn-meal btn-primary" id="switch-to-drink">Care for a cocktail?</button></a></div>
+<div class="text-center"><a href="drinksindex.html"><button type="submit" class="animate__animated animate__bounceInLeft animate__delay-1s btn btn-meal btn-primary" id="switch-to-drink">Care for a cocktail?</button></a></div>
 
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
           <h2>Make a meal!</h2>
         <form>
           <div class="form-group">
@@ -39,31 +40,32 @@
           </div>
 
 
-          <button type="submit" class="btn btn-primary" id="search-btn">What are we eating?</button>
+          <button type="submit" class="animate__animated animate__bounceInUp animate__delay-2s btn btn-primary" id="search-btn">What are we eating?</button>
         </form>
       </div>
     </div>
    
     <div class="row">
-      <div class="col-sm-6 d-none" id="results">
+      <div class="col-sm-12 d-none" id="results">
         <h4><b><i>Results:</i></b></h4>
+                <!-- Meal Button Modals that are generated on search -->
+  
+        <!-- Modal 1 button -->
+        <div><row><button type="button" id="modal-btn-1" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop1"><span id="modal-btn-1-title"></span></button></row></div>
+        
+        <!-- Modal 2 Button -->
+        <div><row><button type="button" id="modal-btn-2" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop2"><span id="modal-btn-2-title"></span></button></row></div>
+      
+        <!-- Modal 3 Button -->
+        <div><row><button type="button" id="modal-btn-3" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop3"><span id="modal-btn-3-title"></span></button></row></div>
+      
+        <!-- Modal 4 Button -->
+        <div><row><button type="button" id="modal-btn-4" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop4"><span id="modal-btn-4-title"></span></button></row></div>
       </div>
     </div>
   </div>
 
-  <!-- Meal Button Modals that are generated on search -->
-  
-  <!-- Modal 1 button -->
-  <div><row><button type="button" id="modal-btn-1" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop1"><span id="modal-btn-1-title"></span></button></row></div>
-  
-  <!-- Modal 2 Button -->
-  <div><row><button type="button" id="modal-btn-2" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop2"><span id="modal-btn-2-title"></span></button></row></div>
- 
-  <!-- Modal 3 Button -->
-  <div><row><button type="button" id="modal-btn-3" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop3"><span id="modal-btn-3-title"></span></button></row></div>
- 
-  <!-- Modal 4 Button -->
-  <div><row><button type="button" id="modal-btn-4" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop4"><span id="modal-btn-4-title"></span></button></row></div>
+
  
   
 <!-- Modal 1 (different names for each one;can't have same ID if you want different results), give different ID to each Modal and put ID in array and select each one, or give numbers--> 
